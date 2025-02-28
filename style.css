@@ -1,16 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+/*Set background color*/
 html {
    background-color: rgb(173, 173, 173);
 }
 
+
 #text {
+   align-items: center;
    text-align: center;
    position: relative;
-   top: 450px;
+   font-family: 'Lexend';
+   font-style: normal;
+   font-weight: 100 900;
+   font-display: swap;
    color: rgb(0, 0, 0);
    font-size: 50px;
 }
+
+.timesClicked {
+   font-family: 'Lexend';
+   font-style: normal;
+   font-weight: 100 900;
+   font-display: swap;
+}
+
+#num {
+   display: flex;
+   flex-direction: column;
+   align-items: left;
+}
+
+
 
 .button {
    display: flex;
@@ -24,7 +45,7 @@ html {
    width: 220px;
    height: 220px;
    border-radius: 50%;
-   left: 42.85%;
+   left: 50;
    top: 30.5%;
    z-index: 0;
 }
@@ -35,7 +56,7 @@ html {
    width: 200px;
    height: 200px;
    border-radius: 50%;
-   left: 43.5%;
+   left: 44.85%;
    top: 30%;
    z-index: 1;
 }
@@ -65,3 +86,20 @@ html {
    } 
 } 
 
+#circle {
+   position: absolute;
+   background-color: rgb(20, 243, 0);
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   left: 20.5%;
+   top: 30%;
+   z-index: 1;
+   opacity: 0;
+}
+
+@keyframes circle {
+   100% { 
+       opacity: 100%;
+   } 
+} 
