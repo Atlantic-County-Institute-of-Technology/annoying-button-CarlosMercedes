@@ -124,3 +124,9 @@ html {
       opacity: 0;
    } 
 } 
+
+@keyframes waitTime {
+   100% { 
+      opacity: 100;
+   } 
+} 
