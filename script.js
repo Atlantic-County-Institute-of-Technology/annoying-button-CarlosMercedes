@@ -14,18 +14,6 @@ window.onload = function showTimesClicked() {
     num.textContent = "Clicks: " + count
 }
 
-function waitForButton2() {
-    text.textContent = "youre learning"
-    button1.style.animation = "button2 .5s 1 linear forwards";
-    button1dec.style.animation = "button2 .5s 1 linear forwards";
-    button1.style.left = "44.85%"
-    button1dec.style.left = "44.3%"
-    button1.style.top = "30%"
-    button1dec.style.top = "30.53%"
-    button2.style.animation = "button2leave .5s 1 linear forwards";
-    button2dec.style.animation = "button2leave .5s 1 linear forwards";
-    callOnceTransmission = false
-}
 
 //Determine amount of clicks done and execute events based off number of clicks
 var callOnce1 = true
@@ -36,7 +24,9 @@ var callOnce15second = true
 var callOnceTransmission = false
 var waitTime = false
 var timeoutVar = true
+var animationVar = true
 var callOnce30 = true
+var callOnce31 = true
 var callOnce40 = true
 var callOnce50 = true
 var callOnce60 = true
@@ -123,70 +113,78 @@ if (count == 10 && callOnce10) {
     }
 
     if (count == 24 && callOnceTransmission) {
-        button1.style.left = "30.85%"
-        button1dec.style.left = "30.3%"
-        button1.style.top = "60%"
-        button1dec.style.top = "60.5%"
-    }
-
-    if (count == 24 && callOnceTransmission) {
-        button1.style.animation = "button2leave .5s 1 linear forwards";
-        button1dec.style.animation = "button2leave .5s 1 linear forwards";
+        button1.style.left = "60.85%";
+        button1dec.style.left = "60.3%";
+        button1.style.top = "70%";
+        button1dec.style.top = "70.5%";
         button2.style.animation = "button2 .5s 1 linear forwards";
         button2dec.style.animation = "button2 .5s 1 linear forwards";
         button2.style.left = "30.85%";
         button2dec.style.left = "30.3%";
         button2.style.top = "60%";
         button2dec.style.top = "60.5%";
-        while (timeoutVar == true) {
-        const timeout = setTimeout(waitForButton2, 3000)
-        timeout
-        }
+        waitTime = true
     }
 
-    button2.addEventListener("click", function() {
-        if (callOnceTransmission) {
-            timeoutVar = false
-            clearTimeout(timeout)
-            count = 15;
-            num.textContent = "Clicks: " + count
-            text.textContent = "you just lost some clicks (again)"
-            button1.style.left = "44.85%"
-            button1dec.style.left = "44.3%"
-            button1.style.top = "30%"
-            button1dec.style.top = "30.53%"
-            button1.style.animation = "button2 .5s 1 linear forwards";
-            button1dec.style.animation = "button2 .5s 1 linear forwards";
-            button2.style.animation = "button2leave .5s 1 linear forwards";
-            button2dec.style.animation = "button2leave .5s 1 linear forwards";
-            callOnce15second = true
-            callOnceTransmission = false
-        }
-    }); 
-
-    if (count == 30 && callOnce30 && callOnceTransmission == false) {
-        text = "the green button is bad"
-        callOnce30 = false
-
+    if (waitTime) {
+        button2.addEventListener("click", function() {
+                count = 15;
+                num.textContent = "Clicks: " + count
+                text.textContent = "you just lost some clicks (again)"
+                button1.style.left = "44.85%"
+                button1dec.style.left = "44.3%"
+                button1.style.top = "30%"
+                button1dec.style.top = "30.53%"
+                button1.style.animation = "button2 .5s 1 linear forwards";
+                button1dec.style.animation = "button2 .5s 1 linear forwards";
+                button2.style.animation = "button2leave .5s 1 linear forwards";
+                button2dec.style.animation = "button2leave .5s 1 linear forwards";
+                button2.style.display = "none";
+                button2dec.style.display = "none";
+                callOnce15second = true
+        }); 
     }
+
+    if (count == 25 && callOnce15second == true) {
+        text.textContent = "youre learning"
+        button1.style.left = "44.85%"
+        button1dec.style.left = "44.3%"
+        button1.style.top = "30%"
+        button1dec.style.top = "30.53%"
+        button2.style.animation = "button2leave .5s 1 linear forwards";
+        button2dec.style.animation = "button2leave .5s 1 linear forwards";
+        waitTime = false
+    }
+    if (count == 30 && callOnce30) {
+        text.textContent = "the green button is bad"
+
+        let animation = button1.style.animation = "orbit 5s infinite linear";
+        let animation2 = button1dec.style.animation = "orbit 5s infinite linear";
+        const animationid = window.requestAnimationFrame(animation, animation2)
+        }
+
+        button1.addEventListener("click", function() {
+            window.cancelAnimationFrame(animationid)
+
+        }); 
+    
 
     if (count == 40 && callOnce40) {
-        text = "dont trust the green button"
         callOnce40 = false
     }
 
     if (count == 50 && callOnce50) {
-        text = "never trust the green button"
+        text.textContent = "never trust the green button"
         callOnce50 = false
     }
 
     if (count == 60 && callOnce60) {
-        text = "never CLICK the green button"
+        text.textContent = "never CLICK the green button"
         callOnce60 = false
     }
 
     if (count == 70 && callOnce70) {
-        text = "the green button is evil"
+        text.textContent = "the green button is evil"
         callOnce70 = false
     }
     
