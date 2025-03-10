@@ -21,16 +21,14 @@ var callOnce2 = true
 var callOnce10 = true
 var callOnce15 = true
 var callOnce15second = true
+var firstButton2 = true
 var callOnceTransmission = false
 var waitTime = false
 var timeoutVar = true
 var animationVar = true
 var callOnce30 = true
 var callOnce31 = true
-var callOnce40 = true
-var callOnce50 = true
-var callOnce60 = true
-var callOnce70 = true
+var callOnce35 = true
 
 button1.addEventListener("click", function() {
     count++;
@@ -64,14 +62,14 @@ if (count == 10 && callOnce10) {
         button1dec.style.left = "44.3%"
         button2.style.animation = "button2leave .5s 1 linear forwards";
         button2dec.style.animation = "button2leave .5s 1 linear forwards";
-        callOnce15second = false
+        firstButton2 = false
     }); 
 
     if (count == 20 && callOnce15second == false) {
         callOnceTransmission = true
     }
 
-    if (count == 15 && callOnce15second) {
+    if (count == 15 && callOnce15second && firstButton2) {
         num.textContent = "Clicks: " + count
         text.textContent = "youre boring"
         button1.style.left = "44.85%"
@@ -155,38 +153,173 @@ if (count == 10 && callOnce10) {
         button2dec.style.animation = "button2leave .5s 1 linear forwards";
         waitTime = false
     }
-    if (count == 30 && callOnce30) {
-        text.textContent = "the green button is bad"
 
-        let animation = button1.style.animation = "orbit 5s infinite linear";
-        let animation2 = button1dec.style.animation = "orbit 5s infinite linear";
-        const animationid = window.requestAnimationFrame(animation, animation2)
+    if (count == 30 && callOnce30) {
+        text.textContent = "the green button is bad";
+        button2.style.animation = "button2 .5s 1 linear forwards";
+        button2dec.style.animation = "button2 .5s 1 linear forwards";
+
+        button2.style.left = "30%"
+        button2.style.top = "30%"
+
+        button2dec.style.left = "29.45%"
+        button2dec.style.top = "30.5%"
+
+        button1.style.left = "60%"
+        button1dec.style.left = "59.45%"
         }
 
-        button1.addEventListener("click", function() {
-            window.cancelAnimationFrame(animationid)
+    if (count == 31) {
+        text.textContent = "it is not here to help you";
 
-        }); 
-    
+        //button1.style.left = "55%"
+        //button1dec.style.left = "54.45%"
 
-    if (count == 40 && callOnce40) {
-        callOnce40 = false
+        button1.style.top = "35%"
+        button1dec.style.top = "35.5%"
+
+        button1.style.width = "180px"
+        button1.style.height = "180px"
+
+        button1dec.style.width = "200px"
+        button1dec.style.height = "200px"
+
+        button2.style.width = "240px"
+        button2.style.height = "240px"
+
+        button2dec.style.width = "260px"
+        button2dec.style.height = "260px"
+
     }
 
-    if (count == 50 && callOnce50) {
+    if (count == 32) {
         text.textContent = "never trust the green button"
-        callOnce50 = false
+        //button1.style.left = "55.85%"
+        //button1dec.style.left = "55.3%"
+
+        button1.style.top = "40%"
+        button1dec.style.top = "40.5%"
+
+        button1.style.width = "160px"
+        button1.style.height = "160px"
+
+        button1dec.style.width = "180px"
+        button1dec.style.height = "180px"
+
+        button2.style.width = "260px"
+        button2.style.height = "260px"
+
+        button2dec.style.width = "280px"
+        button2dec.style.height = "280px"
+
     }
 
-    if (count == 60 && callOnce60) {
+    if (count == 33) {
         text.textContent = "never CLICK the green button"
-        callOnce60 = false
+        button2.style.animation = "button2 .5s 1 linear forwards";
+        button2dec.style.animation = "button2 .5s 1 linear forwards";
+
+        //button1.style.left = "55.85%"
+        //button1dec.style.left = "55.3%"
+
+        button1.style.top = "40%"
+        button1dec.style.top = "40.5%"
+
+        button1.style.width = "110px"
+        button1.style.height = "110px"
+
+        button1dec.style.width = "125px"
+        button1dec.style.height = "125px"
+
+        button2.style.width = "310px"
+        button2.style.height = "310px"
+
+        button2dec.style.width = "330px"
+        button2dec.style.height = "330px"
     }
 
-    if (count == 70 && callOnce70) {
+    if (count == 34) {
         text.textContent = "the green button is evil"
-        callOnce70 = false
-    }
+        button1.style.left = "59.80%"
+
+        button1.style.top = "40.3%"
+        button1dec.style.top = "40.5%"
+
+        button1.style.width = "45px"
+        button1.style.height = "45px"
+
+        button1dec.style.width = "50px"
+        button1dec.style.height = "50px"
+
+        button2.style.width = "800px"
+        button2.style.height = "800px"
+
+        button2dec.style.width = "825px"
+        button2dec.style.height = "825px"
+
+        button2.style.left = "10%"
+        button2.style.top = "10%"
+
+        button2dec.style.left = "9.45%"
+        button2dec.style.top = "10.5%"
     
+} 
+
+    if (count == 34) {
+    text.textContent = "the green button is evil"
+    button1.style.left = "59.80%"
+
+    button1.style.top = "40.3%"
+    button1dec.style.top = "40.5%"
+
+    button1.style.width = "45px"
+    button1.style.height = "45px"
+
+    button1dec.style.width = "50px"
+    button1dec.style.height = "50px"
+
+    button2.style.width = "800px"
+    button2.style.height = "800px"
+
+    button2dec.style.width = "825px"
+    button2dec.style.height = "825px"
+
+    button2.style.left = "10%"
+    button2.style.top = "10%"
+
+    button2dec.style.left = "9.45%"
+    button2dec.style.top = "10.5%"
+    callOnce30 = false
+    } 
+
+    if (count == 35 && callOnce35) {
+       button1.removeEventListener("click", function() {
+
+       })
+        text.textContent = "find the way to make the count go up"
+
+        button1.style.left = "44.85%"
+        button1dec.style.left = "44.3%"
+
+        button1.style.top = "30%"
+        button1dec.style.top = "30.53%"
+
+        button1.style.width = "200px"
+        button1.style.height = "200px"
+    
+        button1dec.style.width = "220px"
+        button1dec.style.height = "220px"
+
+        button2.style.animation = "button2leave .5s 1 linear forwards";
+        button2dec.style.animation = "button2leave .5s 1 linear forwards";
+
+        button2.style.display = "none"
+
+        let keylog = [];
+        document.onkeydown = function (e) {
+            keylog.push("click");
+            alert("keylog");
+        };
+        } 
 });
 
